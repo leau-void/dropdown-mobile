@@ -1,0 +1,166 @@
+.dropdown {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-label {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border: 2px solid blue;
+  background: white;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 99;
+}
+
+.dropdown-background {
+  width: 210vw;
+  height: 400vh;
+  border-radius: 50%;
+  position: fixed;
+  left: -210vw;
+  top: 405vh;
+  background: blue;
+  z-index: 98;
+  transition: left 300ms ease-out;
+  transition: top 300ms ease-in;
+}
+
+.dropdown.dropped > .dropdown-background {
+  left: -100vw;
+  top: -5vh;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown.dropped > .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 99;
+  top: 30vh;
+  left: 20vw;
+}
+
+.dropdown-content > * {
+  color: white;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+.dropdown-content > div:hover {
+  text-decoration: underline;
+}
+
+.dropdown-content .dropdown-label {
+  border: unset;
+  position: unset;
+  background: unset;
+}
+
+.dropdown-content > .dropped .dropdown-label {
+  position: fixed;
+  display: block;
+  top: 20px;
+  left: unset;
+  right: 20px;
+  background: white;
+  color: orangered;
+  border: 2px solid orange;
+  z-index: 99;
+}
+
+.dropdown-content .dropdown-content {
+  z-index: 99;
+}
+
+.dropdown-content .dropdown-background {
+  background: orange;
+  z-index: 98;
+  left: unset;
+  right: -210vw;
+  top: 405vh;
+}
+
+.dropdown-content .dropped > .dropdown-background {
+  left: unset;
+  right: -120vw;
+}
+
+.dropdown-content .dropped .dropdown-content {
+  z-index: 99;
+  left: unset;
+  right: 10vw;
+}
+
+.floatmenu-label {
+  position: fixed;
+  bottom: 10vh;
+  right: 10vw;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1.5rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  z-index: 99;
+}
+
+.dropped > .floatmenu-label {
+  color: white;
+  border-color: white;
+  box-shadow: 0 0 5px 5px white;
+}
+
+.floatmenu-content {
+  display: none;
+}
+
+.floatmenu-content + .floatmenu-background {
+  width: 45vw;
+  height: 200vh;
+  border-radius: 50%;
+  background-color: coral;
+  position: fixed;
+  bottom: -50vh;
+  border: none;
+  z-index: 98;
+  right: -50vw;
+  transition: right 1s ease-out;
+}
+
+.dropped .floatmenu-content + .floatmenu-background {
+  right: -10vw;
+}
+
+.dropped > .floatmenu-content {
+  display: flex;
+  flex-direction: column-reverse;
+  position: fixed;
+  z-index: 99;
+  bottom: 25vh;
+  right: 10vw;
+}
+
+.floatmenu-content > * {
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 2vh;
+  z-index: 99;
+}
+
+.floatmenu-content > div:hover {
+  text-decoration: underline;
+}
